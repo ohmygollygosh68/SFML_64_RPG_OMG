@@ -18,6 +18,8 @@ class Game
 		sf::RenderWindow *window;
 		sf::Event sfEvent;
 
+		sf::Clock dtClock;
+		float dt;
 
 		//Initialization
 		void initWindow();
@@ -31,6 +33,7 @@ class Game
 	virtual ~Game();
 
 	//Functions
+	void updateDt();
 	void updateSFMLEvents();
 	void update();
 	void render();

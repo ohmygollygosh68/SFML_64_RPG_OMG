@@ -35,11 +35,23 @@ void Game::initStates()
 {
 	this->states.push(new GameState(this->window));
 }
+void Game::initKeys()
+{
+	this->supportedKeys.emplace("A", sf::Keyboard::Key::A);
+	this->supportedKeys.emplace("D", sf::Keyboard::Key::D);
+	this->supportedKeys.emplace("W", sf::Keyboard::Key::W);
+	this->supportedKeys.emplace("S", sf::Keyboard::Key::S);
+
+	std::cout << this->supportedKeys.at("A") << "\n";
+
+
+}
 //Constructors/Destructors
 Game::Game()
 {
 	this->initWindow();
 	this->initStates();
+	this->initKeys();
 }
 Game::~Game()
 {
@@ -68,8 +80,8 @@ void Game::updateDt()
 	/*Updates the dt variable with the time it takes to update and render one frame.*/
 	this->dt = this->dtClock.restart().asSeconds();
 
-	system("cls");
-	std::cout << this->dt << "\n";
+	//system("cls");
+	//std::cout << this->dt << "\n";
 
 
 }

@@ -15,12 +15,12 @@ class Game
 		float dt;
 
 		std::stack<State*> states;
-
+		std::map<std::string, int> supportedKeys;
 
 		//Initialization
 		void initWindow();
 		void initStates();
-
+		void initKeys();
 
 
 
